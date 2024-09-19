@@ -9,5 +9,12 @@
 
 # HOW TO USE?
 
-git clone
+
+```
+git clone https://github.com/madanokr001/ANONYMOUS-spyware.git
+cd ANONYMOUS-spyware
+ls
+python ANONYMOUS.py
+```
+
 

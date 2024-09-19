@@ -13,6 +13,8 @@
 ```
 git clone https://github.com/madanokr001/ANONYMOUS-spyware.git
 cd ANONYMOUS-spyware
+pip3 install pyautogui
+pip3 install schedule
 ls
 python ANONYMOUS.py
 ```

@@ -15,6 +15,8 @@ git clone https://github.com/madanokr001/ANONYMOUS-spyware.git
 cd ANONYMOUS-spyware
 pip3 install pyautogui
 pip3 install schedule
+pip install --upgrade Pillow
+sudo apt install gnome-screenshot
 ls
 python ANONYMOUS.py
 ```

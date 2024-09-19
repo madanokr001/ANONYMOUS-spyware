@@ -1,7 +1,9 @@
 # SPYWARE TOOLS
-1. KEYLOGGER
-2. SCREENSHOT MONITOR
-3. REVERSE SHELL (COMMING SOON...)
+1. KEY LOGGER
+![image](https://github.com/user-attachments/assets/468cb66a-2f8e-423e-a8bb-89fed2103f67)
+3. MONITOR SCREENSHOT
+![image](https://github.com/user-attachments/assets/0cc26dc4-5542-4349-9c0b-9a30c5e35020)
+
 
 
 # IMAGE
@@ -20,5 +22,7 @@ sudo apt install gnome-screenshot
 ls
 python ANONYMOUS.py
 ```
+
+
 
 

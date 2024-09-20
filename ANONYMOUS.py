@@ -25,7 +25,7 @@ def logo():
 ██╔══██╗████╗  ██║██╔═══██╗████╗  ██║╚██╗ ██╔╝████╗ ████║██╔═══██╗██║   ██║██╔════╝ 
 ███████║██╔██╗ ██║██║   ██║██╔██╗ ██║ ╚████╔╝ ██╔████╔██║██║   ██║██║   ██║███████╗
 ██╔══██║██║╚██╗██║██║   ██║██║╚██╗██║  ╚██╔╝  ██║╚██╔╝██║██║   ██║██║   ██║╚════██║
-██║  ██║██║ ╚████║╚██████╔╝██║ ╚████║   ██║   ██║ ╚═╝ ██║╚██████╔╝╚██████╔╝███████║ 악용금지 X
+██║  ██║██║ ╚████║╚██████╔╝██║ ╚████║   ██║   ██║ ╚═╝ ██║╚██████╔╝╚██████╔╝███████║ 스파이 웨어 툴
 ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚═╝     ╚═╝ ╚═════╝  ╚═════╝ ╚══════╝ spyware tools
           """ + TextColors.RESET)
 
@@ -35,7 +35,7 @@ def menu():
     print(TextColors.WHITE + "----------------SPYWARE MENU-----------------" + TextColors.RESET)
     print(TextColors.WHITE + "[1] KEY LOGGER" + TextColors.RESET)
     print(TextColors.WHITE + "[2] MONITOR SCREENSHOT" + TextColors.RESET)
-    print(TextColors.WHITE + "[3] REVERSE SHELL" + TextColors.RESET)
+    print(TextColors.WHITE + "[3] EXIT " + TextColors.RESET)
     print(TextColors.WHITE + "----------------SPYWARE MENU----------------- \n" + TextColors.RESET)
 
 menu()
@@ -136,7 +136,7 @@ elif select in ["2", "MONITOR SCREENSHOT"]:
         schedule.run_pending()
         time.sleep(1)
 
-elif select in ["3", "REVERSE SHELL"]:
-    print("COMING SOON...")
+elif select in ["3", "EXIT"]:
+    print("bye :( ")
     
 

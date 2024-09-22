@@ -7,7 +7,8 @@
 
 
 # IMAGE
-![image](https://github.com/user-attachments/assets/95d0190a-ff4d-41b0-83f2-e59fbca6c46f)
+![Uploading image.png…]()
+
 
 # HOW TO USE?
 
